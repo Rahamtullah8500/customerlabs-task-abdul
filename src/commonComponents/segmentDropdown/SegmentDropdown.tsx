@@ -54,7 +54,7 @@ const SegmentDropdown: React.FC<DropDownProps> = ({
         style={{ backgroundColor: getColor(value) }}
       ></div>
       <div className="schema-dropdown-body" onClick={handleIsOpen}>
-        <div className="schema-dropdown-input">{selectedValue}</div>
+        <div className="schema-dropdown-input">{value || selectedValue}</div>
         <div className="schema-dropdown-icon">
           <FaAngleDown style={{ fontSize: "1.2rem", color: " #5a7c93" }} />
         </div>

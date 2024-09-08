@@ -25,7 +25,9 @@ const options: SchemaOption[] = [
 ];
 
 const Segment: React.FC = () => {
-  const [selectedSchema, setSelectedSchema] = useState<SchemaOption | string>("Add schema to segment");
+  const [selectedSchema, setSelectedSchema] = useState<SchemaOption | string>(
+    "Add schema to segment"
+  );
   const [schemas, setSchemas] = useState<SchemaOption[]>([]);
   const [segmentData, setSegmentData] = useState<SegmentData>({
     segment_name: "",
@@ -54,8 +56,14 @@ const Segment: React.FC = () => {
   };
 
   const handleAddSchema = () => {
-    if (typeof selectedSchema !== "string" && selectedSchema.id) {
-      setSchemas((prevVal) => [...prevVal, selectedSchema]);
+    if (selectedSchema && selectedSchema !== "Add schema to segment") {
+      //   setSchemas((prevVal) => [...prevVal, selectedSchema]);
+      setSchemas((prevVal) => {
+        if (typeof selectedSchema !== "string") {
+          return [...prevVal, selectedSchema];
+        }
+        return prevVal; // Don't add if it's a string
+      });
     }
     setSelectedSchema("Add schema to segment");
   };
@@ -85,7 +93,7 @@ const Segment: React.FC = () => {
           "Content-Type": "application/json",
         },
       })
-      .then((response:Response) => {
+      .then((response) => {
         setSegmentData({
           segment_name: "",
           schema: [],
@@ -93,7 +101,7 @@ const Segment: React.FC = () => {
         setSchemas([]);
         console.log("Data sent successfully:", response.data);
       })
-      .catch((error:Error) => {
+      .catch((error: Error) => {
         console.error("Error sending data:", error);
       });
   };
@@ -133,6 +141,7 @@ const Segment: React.FC = () => {
               className="segment-name-input"
               onChange={handleSegmentName}
               placeholder="Name of the segment"
+              value={segmentData.segment_name}
             />
             <div className="segment-popup-text">
               To save your segment, you need to add the schemas to build the
@@ -180,9 +189,7 @@ const Segment: React.FC = () => {
               handleDelete={handleCancel}
             />
             <div className="segment-add-body" onClick={handleAddSchema}>
-              <a href="#" className="segment-add-link">
-                Add new schema
-              </a>
+              <a className="segment-add-link">Add new schema</a>
             </div>
           </div>
         </div>
@@ -206,6 +213,5 @@ const Segment: React.FC = () => {
     </div>
   );
 };
-
 
 export default Segment;
