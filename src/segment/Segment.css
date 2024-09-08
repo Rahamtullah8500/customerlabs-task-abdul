@@ -1,0 +1,152 @@
+.segment-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding-top: 100px;
+    justify-content: center;
+    background-color: #f5f7f9;
+}
+
+.save-segment-btn{
+    background-color: #4FBDBA;
+    width: fit-content;
+    height: fit-content;
+    font-weight: 600;
+    font-size: 16px;
+
+    &:hover{
+        background-color: #3cb2ae;
+        box-shadow: 1px 2px 4px #cdcdcd;
+    }
+
+    &:active{
+        background-color: #4bcebc;
+    }
+}
+.segment-popup-container{
+    width: 420px !important;
+}
+
+.segment-popup-text{
+    font-weight: 400;
+    color: #000;
+    margin-top: 10px;
+}
+.segment-popup-header{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: flex-start;
+    color: #ffffff;
+}
+
+.offcanvas-header{
+    background-color: #4FBDBA;
+}
+
+.segment-name-input{
+    min-height: 40px;
+    padding: 0 10px;
+}
+
+.segment-popup-body-main{
+    height: calc(100% - 80px);
+}
+
+.segment-popup-body{
+    height: calc(100% - 0px);
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.segment-legend-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.segment-legend-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.segment-legend-color{
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    margin-top: 2px;
+    background-color: #d22020;
+}
+
+.segment-legend-text{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.segment-add-body{
+    font-size: 12px;
+    font-weight: 600;
+    color: #22b1ad;
+}
+
+.segment-schemas-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 3px solid #76a1d5;
+    border-radius: 3px;
+    padding: 10px 0px;
+}
+
+.segment-add-link{
+    color: #22b1ad;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.segment-popup-buttons-container{
+    background-color: #F5f7f9;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    height: 80px;
+}
+
+.segment-button-save,.segment-button-cancel{
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.save-btn{
+    background-color: #4FBDBA;
+    color: #ffffff;
+
+    &:hover{
+        background-color: #22b1ad;
+        cursor: pointer;
+    }
+    &:active{
+        background-color: #4bcebc;
+    }
+}
+
+.cancel-btn{
+    background-color: #ffffff;
+    color: rgb(165, 27, 27);
+    &:hover{
+        background-color: #f3f5f7;
+        cursor: pointer; 
+        border: 1px solid rgb(158, 5, 5);
+    }
+    &:active{
+        background-color: #ffffff;
+    }
+}
